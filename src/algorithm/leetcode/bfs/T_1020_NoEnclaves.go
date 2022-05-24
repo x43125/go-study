@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-//todo -now
 func main() {
 	grid := [][]int{{0, 1, 1, 0}, {0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 0, 0}}
 
@@ -10,24 +9,24 @@ func main() {
 	fmt.Println(island)
 }
 
-var m_2, n_2 = 0, 0
+var m2, n2 = 0, 0
 
 func numEnclaves(grid [][]int) int {
-	m_2, n_2 = len(grid), len(grid[0])
+	m2, n2 = len(grid), len(grid[0])
 	res := 0
 
-	for i := 0; i < m_2; i++ {
+	for i := 0; i < m2; i++ {
 		dfs_03(grid, i, 0)
-		dfs_03(grid, i, n_2-1)
+		dfs_03(grid, i, n2-1)
 	}
 
-	for j := 0; j < n_2; j++ {
+	for j := 0; j < n2; j++ {
 		dfs_03(grid, 0, j)
-		dfs_03(grid, m_2-1, j)
+		dfs_03(grid, m2-1, j)
 	}
 
-	for i := 0; i < m_2; i++ {
-		for j := 0; j < n_2; j++ {
+	for i := 0; i < m2; i++ {
+		for j := 0; j < n2; j++ {
 			if grid[i][j] == 1 {
 				res++
 			}
@@ -37,7 +36,7 @@ func numEnclaves(grid [][]int) int {
 }
 
 func dfs_03(grid [][]int, i int, j int) {
-	if i < 0 || j < 0 || i >= m_2 || j >= n_2 {
+	if i < 0 || j < 0 || i >= m2 || j >= n2 {
 		return
 	}
 

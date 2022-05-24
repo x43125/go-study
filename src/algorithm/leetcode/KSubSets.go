@@ -8,7 +8,7 @@ func main() {
 }
 
 func combine(n int, k int) [][]int {
-	//if n_2 <= 0 || k <= 0 || k > n_2 {
+	//if n2 <= 0 || k <= 0 || k > n2 {
 	//	return [][]int{}
 	//}
 
